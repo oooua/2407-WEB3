@@ -44,28 +44,31 @@
         // document.write(' * ')
         // document.write('<br>')
 
-        
+        // i가 0, i가 j이하 일때 1씩 증가
+        // t는 0, t가 i이하일때 1씩 증가
 
-        for(let j = 4 ; j >= 0 ; j--) {
-            for(let i = 0 ; i <= j ; i++) {
-                document.write('&nbsp;')
-                for(let t = 0 ; t <= i ; t++){
-                    document.write('*')
-                }
-            }
-                    
-                document.write('<br>')
-        }
+        // for(let j = 4 ; j >= 0 ; j--) {
+        //     for(let i = 0 ; i <= j ; i++) {
+        //         document.write('&nbsp;')
+        //         for(let t = 0 ; t <= i ; t++){
+        //             document.write('*')
+        //         }
+        //     }
+        //     document.write('<br>')
+        // }
+
+        // a는 4, a가 j이하일때 j 는 1씩 감소
 
         for(let j =4 ; j >= 0 ; j --) {
             for(let i = 0 ; i <= j ; i++){
                 document.write('&nbsp;*&nbsp;')
+                for(let a = 0; a <= j ; a++){
+                    document.write('&nbsp;')
+                }
             }
             document.write('<br>')
         }
-        
 
-        
         for(let j = 0 ; j < 5 ; j++) {
             for(let i = 0 ; i <= j ; i ++) {
                 document.write('&nbsp;*&nbsp;')
