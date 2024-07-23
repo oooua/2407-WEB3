@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        const alpha = ['a','b','c','d','e','f','g','h','i'];
+        const alpha = ['a','b','c','d','e','f'];
         // for(let a = 0 ; a <= 4 ; a++){
         //     console.log(alpha[a])
         // }
@@ -18,47 +18,60 @@
         // console.log (alpha [3])
         // console.log (alpha [4])
 
-        // for(let i = 0 ; i < alpha.length ; i++){
-        //     console.log(alpha[i])
-        // }
-
-        const arr = [];
-
+        for(let i = 0 ; i < alpha.length ; i++){
+            console.log(alpha[i])
+        }
+        
         // console.log 의 위치도 중요하다 
         //         for(let i = 0 ; i <= 100 ; i++){
-        //          console.log(arr)
-        // } 
-        // arr.push(i)
-        // 위처럼 console.log 가 안으로 들어가 있으면 출력할게 없는데 출력을 하고 수를 추가되는 느낌이라 출력이 되지 않는다.
+            //          console.log(arr)
+            // } 
+            // arr.push(i)
+            // 위처럼 console.log 가 안으로 들어가 있으면 출력할게 없는데 출력을 하고 수를 추가되는 느낌이라 출력이 되지 않는다.
+            
+        const arr = [];
 
-        // console.log(arr);
 
-        for(let i = 1 ; i <= 100 ; i++){
+        for(let i = 1 ; i <= 100 ; i++) {
             arr.push(i)
         }
+
         console.log(arr);
         
         let count = 0;
 
-        for(let i = 0; i < arr.length ; i++)
+        for(let i = 0 ; i < arr.length ; i++ ) {
             if(arr[i] % 2 === 0){
-                count++;
+                count++
             }
-        console.log(conut);
-
-        for(let i = 0 ; i < arr.length ; i++){
-
         }
-        let count2 = 0;
-        const arr2 = [1 , 4 , 2 , 2 ,4 ,3 ,2 ,4]
-            for(let i = 0 ; i < arr.length ; i ++){
-                if(arr[i]>=3 ){
-                    count2++;
-                }
+        console.log(count)
+
+        const 짝수 = [];
+
+        for(let i = 0 ; i < arr.length ; i ++){
+            if(arr[i] % 2 === 0) {
+                짝수.push(arr[i]);
             }
-            console.log(count2);
+        }
+
+        console.log(짝수.length)
 
 
+
+        let count2 = 0;
+
+        // 배열안에 3 이상인 값은 몇개인가?
+
+        const arr2 = [ 1 , 4 , 2 , 2 , 4 , 3 , 2 , 4 ]
+
+        for(let i = 0 ; i < arr2.length ; i ++) {
+            if(arr2[i] >= 3){
+                count2++
+            }
+        }
+
+        console.log (count2)
     </script>
 </body>
 </html>
