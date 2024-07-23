@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const 난수 = Math.random();
+        console.log(난수);
+
+        // 0 이상 1 미만
+        // 0~0.99999999999.....까지 나온다.
+
+        // 0부터 4 까지 만들고 싶은 상황이라면
+        // *5
+        // 최소값 : 0, 최대값 : 4.9999999999.........
+        // 소숫점을 버리면
+        // for(let i = 1 ; i <= 10 ; i++){
+            console.log(parseInt(Math.random()*5));
+        // }
+        for(let i = 1 ; i <= 10 ; i++){
+            console.log(parseInt(Math.random()*61)+20);
+        }
+    </script>
+</body>
+</html>
