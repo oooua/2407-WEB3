@@ -26,19 +26,29 @@
         const box = document.getElementsByClassName('box');
         const button = document.querySelector('.switch');
 
-        button.addEventListener('click',()=>{
-            box[0].classList.add('active')
-        })
+        // button.addEventListener('click',()=>{
+        //     box[0].classList.add('active')
+        // })
+
+        
 
         // window.addEventListener('click', (buttonBox)=>{
         //     console.log('클릭되었다.')
         // })
 
-        // box[0].classList.contains('ative') box[0]이 active라는 클래스를 가졌는지
+        // box[0].classList.contains('active') box[0]이 active라는 클래스를 가졌는지
         // 가졌으면 true 안가졌으면 false
 
         // if문과 위의 contains를 이용해 스위치를 누를때마다 켜졌다 꺼졌다 반복되는
         // 인터렉션을 만들어보자 <= 숙제
+
+        button.addEventListener('click',()=>{
+            if(box[0].classList.contains('active')){
+                (box[0].classList.remove('active'))
+            }else{
+                (box[0].classList.add('active'))
+            }
+        }
     </script>
 </body>
 </html>

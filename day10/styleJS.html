@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .rect {
+            width: 300px;
+            height: 100px;
+            border: solid 1px #222;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="color-box">
+        <div class="rect"></div>
+        <input type="range" name="" id="">
+    </div>
+
+    <div class="color-box">
+        <div class="rect"></div>
+        <input type="range" name="" id="">
+    </div>
+    <script>
+        // const colorBox = document.getElementsByClassName('body:nth-child(1) > color-box');
+        // const rec = document.getElementsByClassName('')
+
+        const colorBox = document.getElementsByClassName('color-box')
+        
+        for(let i = 0; i < colorBox.length ; i ++){
+            const rect = colorBox[i].querySelector('.rect')
+            const range = colorBox[i].querySelector('input')
+
+            console.log(range.value)
+
+            range.addEventListener('change', () => {
+                rect.style.backgroundColor = `hsl(0, 0%, ${100 - range.value}%)`
+            })
+        }
+    </script>
+</body>
+</html>
