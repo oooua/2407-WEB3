@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>index</title>
 
     <style>
         * {
@@ -25,7 +25,7 @@
         .content {
             width: 300px;
             height: 200px;
-            background-color: lightcoral;
+            background-color: lightgoldenrodyellow;
 
             flex-shrink: 0;
 
@@ -34,7 +34,7 @@
             align-items: center;
             font-weight: bold;
             font-size: 24px;
-            color: white;
+            color: #222;
         }
 
         /* 다음을 눌렀을 때 왼쪽으로 300 이동. */
@@ -62,10 +62,23 @@
     </div>
 
     <script>
-
+        const viewCount = 4;
+        const gap = 4;
+        const slider = document.querySelector('.slider')
         const wrap = document.querySelector('.content-wrapper')
+        const slideCount = wrap.childElementCount;
         const next = document.querySelector('.next')
         const prev = document.querySelector('.prev')
+
+        const slideWidth = (slider.clientWidth - gap * (viewCount - 1)) / viewCount
+
+        let index = 0;
+
+        wrap.style.gap = `${gap}px`
+
+        for(let i = 0 ; i < slideCount ; i ++) {
+            wrap.children[i].style.width = `${slideWidth}px`
+        }
 
         prev.addEventListener('click', ()=> {
             index--;
