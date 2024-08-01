@@ -88,16 +88,15 @@
         prev.addEventListener('click', ()=> {
             index --;
 
-            if(index < 0 ){
-                index = wrap.childElementCount-viewCount ; 
+            if(index < 1 ){
+                index = wrap.childElementCount-viewCount-1 ; 
             }
-        
+
             applyIndexToSlider()
         })
 
         next.addEventListener('click', () => {
-            //
-             
+
             index ++ ; 
 
             if(index > wrap.childElementCount-viewCount) {
@@ -105,12 +104,30 @@
                 index = 0;
             }
             applyIndexToSlider()
+
+            // 만약 마지막 슬라이드(복사본)에 도달 했다면
+            // if(firstWrap에 도달 했을때){
+            // 0.5s 후 트랜지션이 빠지게 해야한다.
+            // }
+            // transtion 지속시간만큼 시간이 흐른 뒤에
+            // transtion을 0으로 만들고, 좌표를 첫번째 슬라이드로 바꿔치기한다.
+            if(index > contentWrapper.childElementCount-viewCount-2) {
+                index = 0 ;
+            }
+
         })
+
+        function applyIndexToSlider(animation){
+            if(animation){
+                wrap.style.transition = `0.5s`
+            }else {
+                wrap.style.transition = `none`
+            }
+        }
 
         function applyIndexToSlider(){
             wrap.style.transform = `translateX(${index * -(slideWidth + gap)}px)`
         }
-
 
     </script>
 </body>
