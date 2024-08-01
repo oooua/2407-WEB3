@@ -19,7 +19,6 @@
         .content-wrapper {
             display: flex;
             transition: 0.5s;
-            
         }
 
         .content {
@@ -70,13 +69,19 @@
         const next = document.querySelector('.next')
         const prev = document.querySelector('.prev')
 
+        const lastWrap = wrap.lastElementChild.cloneNode(true); 
+        const firstWrap = wrap.firstElementChild.cloneNode(true); 
+
+        wrap.appendChild(firstWrap);
+        wrap.insertBefore(lastWrap, wrap.firstElementChild)
+
         const slideWidth = (slider.clientWidth - gap * (viewCount - 1)) / viewCount
 
         let index = 0;
 
         wrap.style.gap = `${gap}px`
 
-        for(let i = 0 ; i < slideCount ; i ++) {
+        for(let i = 0 ; i < wrap.childElementCount ; i ++) {
             wrap.children[i].style.width = `${slideWidth}px`
         }
 
@@ -91,6 +96,8 @@
         })
 
         next.addEventListener('click', () => {
+            //
+             
             index ++ ; 
 
             if(index > wrap.childElementCount-viewCount) {
