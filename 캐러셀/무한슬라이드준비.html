@@ -117,14 +117,12 @@
 
         })
 
-        function applyIndexToSlider(animation){
-            if(animation){
-                wrap.style.transition = `0.5s`
-            }else {
-                wrap.style.transition = `none`
-            }
+        if(firstWrap){
+            setTimeout(() => {
+                transition = 0
+            }, 500);
         }
-
+        
         function applyIndexToSlider(){
             wrap.style.transform = `translateX(${index * -(slideWidth + gap)}px)`
         }
