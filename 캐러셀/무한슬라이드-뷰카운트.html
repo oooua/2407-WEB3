@@ -59,7 +59,7 @@
     </div>
 
     <script>
-        const viewCount = 1;
+        const viewCount = 2;
         const gap = 4;
         const slider = document.querySelector('.slider')
         const wrap = document.querySelector('.content-wrapper')
@@ -80,6 +80,9 @@
         // 복사본을 적절한 위치에 잘 넣어보도록 합시다.
 
         // 퍼스트, 라스트 말고 개체.children[index]
+
+        // [4] [5] 1 2 3 4 5 [1] [2] -> viewCount가 2 일때  개체수 4개 증가.
+        // 
  
         const lastWrap = wrap.lastElementChild.cloneNode(true); 
         const firstWrap = wrap.firstElementChild.cloneNode(true); 
@@ -89,7 +92,23 @@
 
         let index = viewCount ;
         let playAble = true;
+        // let viewPoint = ;
 
+        // [5] 1 2 3 4 5 [1]
+        // 갯수 = 7
+        // viewCount = 1 < 곧 viewCount - viewCount
+        // 일때 
+
+        for(let i = 0 ; i < wrap.childElementCount; i ++ ){
+            if(i < viewCount ){
+                firstWrap
+            }else if(viewCount + viewCount){
+                lastWrap
+            }
+        }
+        for(let i = 0 ; i < wrap.childElementCount ; i ++){
+
+        }
 
         
         applyIndexToSlider(false);
@@ -110,8 +129,8 @@
                 setTimeout(() => {
                     playAble=true;
 
-                    if(index === viewCount - 1){
-                        index = wrap.childElementCount - viewCount - 1
+                    if(index === viewCount - viewCount){
+                        index = wrap.childElementCount - viewCount - viewCount
                         applyIndexToSlider(false)
                     }
                 }, transitionTime);
