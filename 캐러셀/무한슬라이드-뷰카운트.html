@@ -43,14 +43,14 @@
 <body>
     <div class="slider">
         <ul class="content-wrapper">
-            <li class="content">1</li>
+            <li class="content">1(처음)</li>
             <li class="content">2</li>
             <li class="content">3</li>
             <li class="content">4</li>
             <li class="content">5</li>
             <li class="content">6</li>
             <li class="content">7</li>
-            <li class="content">8</li>
+            <li class="content">8(끝)</li>
         </ul>
     </div>
     <div class="controls">
@@ -82,35 +82,49 @@
         // 퍼스트, 라스트 말고 개체.children[index]
 
         // [4] [5] 1 2 3 4 5 [1] [2] -> viewCount가 2 일때  개체수 4개 증가.
-        // 
- 
-        const lastWrap = wrap.lastElementChild.cloneNode(true); 
-        const firstWrap = wrap.firstElementChild.cloneNode(true); 
 
-        wrap.appendChild(firstWrap);
-        wrap.insertBefore(lastWrap, wrap.firstElementChild)
+        const cloneFirst = [];
+        const cloneLast = [];
+
+        for(let i = 0 ; i < viewCount ; i ++) {
+            cloneFirst.push(wrap.children[i].cloneNode(true))
+            cloneLast.push(wrap.children[wrap.childElementCount - 1 - i].cloneNode(true))
+        }
+
+        console.log(cloneFirst)
+        console.log(cloneLast)
+
+        for(let i = 0 ; i < viewCount ; i ++){
+            wrap.appendChild(cloneFirst[i])
+            wrap.insertBefore(cloneLast[i], wrap.firstElementChild)
+        }
+
+        // const lastWrap = wrap.lastElementChild.cloneNode(true); 
+        // const firstWrap = wrap.firstElementChild.cloneNode(true); 
+
+        // wrap.appendChild(firstWrap);
+        // wrap.insertBefore(lastWrap, wrap.firstElementChild)
 
         let index = viewCount ;
         let playAble = true;
-        // let viewPoint = ;
 
         // [5] 1 2 3 4 5 [1]
         // 갯수 = 7
         // viewCount = 1 < 곧 viewCount - viewCount
         // 일때 
 
-        for(let i = 0 ; i < wrap.childElementCount; i ++ ){
-            if(i < viewCount ){
-                firstWrap
-            }else if(viewCount + viewCount){
-                lastWrap
-            }
-        }
-        for(let i = 0 ; i < wrap.childElementCount ; i ++){
+        // for(let i = 0 ; i < wrap.childElementCount; i ++ ){
+        //     if(i < viewCount ){
+        //         firstWrap.children[i]
+        //     }else if(viewCount + viewCount){
+        //         lastWrap
+        //     }
+        // }
+        // for(let i = 0 ; i < wrap.childElementCount ; i ++){
 
-        }
+        // }
 
-        
+
         applyIndexToSlider(false);
 
         wrap.style.gap = `${gap}px`
