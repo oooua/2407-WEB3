@@ -60,6 +60,7 @@
             height: 12px;
             border-radius: 50%;
             background-color: gray;
+            cursor: pointer;
         }
 
         .radio-button.active {
@@ -100,6 +101,13 @@
             <button class="prev">이전</button>
             <button class="next">다음</button>
             <div class="buttons">
+                <!-- <div class="radio-button"></div>
+                <div class="radio-button"></div>
+                <div class="radio-button"></div>
+                <div class="radio-button"></div>
+                <div class="radio-button"></div>
+                <div class="radio-button"></div>
+                <div class="radio-button"></div> -->
             </div>
         </div>
     </div>
@@ -134,6 +142,7 @@
                 index = viewCount + i;
                 applyIndexToSlider(true)
             })
+
             radioButtonContainer.appendChild(button);
         }
 
@@ -151,6 +160,11 @@
             contentWrapper.appendChild(cloneFirst[i])
             contentWrapper.insertBefore(cloneLast[i], contentWrapper.firstElementChild)
         }
+
+        // for(let i = 0 ; i < ??? ; ++) {
+        //     contentWrapper.appendChild(cloneFirst);
+        //     contentWrapper.insertBefore(cloneLast, contentWrapper.firstElementChild);
+        // }
 
         let index = viewCount ;
         let playAble = true;
@@ -182,6 +196,7 @@
                         applyIndexToSlider(false) 
                     }
                 }, transitionTime);
+
         }})
         
 
@@ -248,16 +263,17 @@
             resetButtons();
             if(viewCount-1 === index){
                 radioButtonContainer.lastElementChild.classList.add('active');
-            }else if(slideCount + viewCount === index){
+            }else if(slideCount + viewCount === index) {
                 radioButtonContainer.firstElementChild.classList.add('active');
-            }else{
-                radioButtonContainer.children[index-viewCount].classList.add('active')
+            }else {
+                radioButtonContainer.children[index-viewCount].classList.add('active');
             }
 
-            function resetButtons() {
-                for(let i = 0 ; i < radioButtonContainer.childElementCount ; i ++){
-                    radioButtonContainer.children[i].classList.remove('active');
-                }
+        }
+
+        function resetButtons() {
+            for(let i = 0 ; i < radioButtonContainer.childElementCount ; i ++) {
+                radioButtonContainer.children[i].classList.remove('active');
             }
         }
     </script>
